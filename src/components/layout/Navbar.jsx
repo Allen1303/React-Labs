@@ -1,8 +1,10 @@
-import { LayoutTemplate, Sun, Moon } from "lucide-react";
+import SignOutBtn from "../ui/SignOutBtn";
+import { LayoutTemplate } from "lucide-react";
 
-export default function Navbar({ user }) {
+export default function Navbar({ user, onSignOut }) {
   console.log("user in navbar", user);
   const navItems = ["Home", "About", "Contact"];
+
   return (
     <nav className="flex justify-between items-center px-6 py-2 bg-white shadow-md z-10">
       <div className="flex items-center gap-2 flex-1">
@@ -16,15 +18,9 @@ export default function Navbar({ user }) {
             <li key={item}>{item}</li>
           ))}
         </ul>
-        <button className="text-base text-slate-400  hover:text-sky-400 hover:underline underline-offset-6 decoration-2 transition cursor-pointer whitespace-nowrap">
-          Sign out
-        </button>
-        <button
-          type="button"
-          className="p-1.5 w-14 h-7 rounded-full bg-white shadow-sm shadow-sky-300 text-amber-500"
-        >
-          <Sun className="w-4 h-4" />
-        </button>
+        {/* Sign Out Button goes here..*/}
+        <SignOutBtn onClick={onSignOut}>Sign out</SignOutBtn>
+        {/* Toggle Button goes here..*/}
         <img
           src="#"
           alt="Pic"
