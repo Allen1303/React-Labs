@@ -1,12 +1,19 @@
+import { useTheme } from "../../hooks/useTheme";
 import { Sun, Moon } from "lucide-react";
 
 export default function ThemeToggleBtn() {
+  const { theme, setTheme } = useTheme();
   return (
     <button
       type="button"
-      className="p-1.5 w-14 h-7 rounded-full bg-white shadow-sm shadow-sky-300 text-amber-500"
+      onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+      className="p-2 w-10 h-10 rounded-full bg-white shadow-sm shadow-sky-300 cursor-pointer"
     >
-      <Sun className="w-4 h-4" />
+      {theme === "dark" ? (
+        <Moon className="w-6 h-6  text-blue-500 " />
+      ) : (
+        <Sun className="w-6 h-6  text-amber-500 " />
+      )}
     </button>
   );
 }

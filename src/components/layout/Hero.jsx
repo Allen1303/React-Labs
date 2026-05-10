@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section aria-labelledby="hero-heading" className="w-screen bg-white">
+    <section aria-labelledby="hero-heading" className="w-screen ">
       <div className="flex flex-col items-center text-center px-6 pt-20 pb-16 w-full ">
         <div className="inline-flex items-center gap-1.5 bg-sky-50 border border-sky-200 rounded-full px-3 py-1 mb-6">
           <span
@@ -13,7 +13,7 @@ export default function Hero() {
         </div>
         <h1
           id="hero-heading"
-          className="text-[clamp(32px,6vw,52px)] font-extrabold text-gray-900 leading-[1.12] tracking-[-1.5px] mb-5 max-w-2xl"
+          className="text-[clamp(32px,6vw,52px)] font-extrabold  leading-[1.12] tracking-[-1.5px] mb-5 max-w-2xl"
         >
           Build better UIs, <span className="text-sky-600">ship faster</span>
         </h1>
@@ -49,7 +49,7 @@ export default function Hero() {
           </a>
           <a
             href="/components"
-            className="inline-flex items-center px-6 py-3 bg-transparent text-gray-700 border-[1.5px] border-gray-200 rounded-xl text-[15px] font-semibold no-underline shadow-sm hover:border-gray-600 transition-all"
+            className="inline-flex items-center px-6 py-3 bg-transparent  border-[1.5px] border-gray-200 rounded-xl text-[15px] font-semibold no-underline shadow-sm hover:border-gray-600 transition-all"
           >
             View components
           </a>
