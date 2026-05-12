@@ -1,28 +1,24 @@
 import { useState, useEffect } from "react";
-
-// Custom hook for Fetching user data
+// custom Hook Function "useFetch"
 export const useFetch = (url) => {
-  const [fetchUser, setFetchUser] = useState(null);
-
+  const [user, setUserData] = useState(null);
+  // Helper function for retrieving Data from API
   const fetchData = async () => {
     try {
       const response = await fetch(url);
       if (!response.ok) {
-        throw new Error("Failed to fetch user data!");
+        throw new Error("Failed to retrieve data");
       }
       const data = await response.json();
-      setFetchUser(data);
+      setUserData(data);
     } catch (error) {
-      console.error("Failed to fetch user data", error);
+      console.log("Failed to load data", error);
     } finally {
-      console.log("Fetch attempt completed");
+      console.log("Fetch data completed");
     }
   };
-  {
-    /* Wrap the fetch function inside useEffect hook*/
-  }
   useEffect(() => {
     fetchData();
   }, []);
-  return { fetchUser };
+  return { user };
 };

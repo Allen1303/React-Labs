@@ -1,10 +1,12 @@
 import SignOutBtn from "../ui/SignOutBtn";
 import ThemeToggleBtn from "../ui/ThemeToggleBtn";
 import { LayoutTemplate } from "lucide-react";
+import { useFetch } from "../../hooks/useFetch";
 
 export default function Navbar({ user, onSignOut }) {
   console.log("user in navbar", user);
   const navItems = ["Home", "About", "Contact"];
+  const { user: userAvatar } = useFetch("https://randomuser.me/api/?results=1");
 
   return (
     <nav className="flex justify-between items-center px-6 py-2  shadow-md z-10">
@@ -23,11 +25,14 @@ export default function Navbar({ user, onSignOut }) {
         <SignOutBtn onClick={onSignOut}>Sign out</SignOutBtn>
         {/* Toggle Button goes here..*/}
         <ThemeToggleBtn />
-        <img
-          src="#"
-          alt="Pic"
-          className="w-12 h-12 rounded-full ring-2 ring-slate-400 ring-offset-2"
-        />
+        {/* Add User Pic fetched from the API*/}
+        {userAvatar && (
+          <img
+            src={userAvatar.results[0].picture.medium}
+            alt="User Image"
+            className="w-12 h-12 rounded-full ring-2 ring-slate-400 ring-offset-2"
+          />
+        )}
         <span className="text-sm font-medium ">{user}</span>
       </div>
     </nav>

@@ -71,9 +71,9 @@ export default function Hero() {
               </div>
             ))}
           </div>
-          <p className="text-[13px] text-gray-500">
-            <strong className="text-gray-900">2,400+</strong> developers
-            building with this guide
+          <p className="text-[13px] ">
+            <strong className="">2,400+</strong> developers building with this
+            guide
           </p>
         </div>
       </div>
